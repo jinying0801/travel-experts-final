@@ -36,37 +36,25 @@ app.set('view engine', 'ejs');
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Define an endpoint handler for the home page 
+
+// Display the login page
 app.get('/', function(request, response) {
-    response.render('animal-list', {});
+    response.render('index', {});
 })
 
-// Define an endpoint handler for the individual animal pages
-app.get('/:id', function(request, response) {
-
-    // model.findOne returns the first object it finds
-    // model.find will always return an array, even if it only finds one 
-    Animal.findOne({ 'id': request.params.id }, function(error, animal) {
-
-        // Check for IDs that are not in our list
-        if (!animal) {
-            return response.send('Invalid ID.');
-        }
-
-        // Compile view and respond
-        response.render('animal-single', animal);
-    });
+// Display the login page
+app.get('/register', function(request, response) {
+    response.render('register', {});
 })
 
-// Create a JSON (no EJS here) that returns the entire animal JSON
-// This is the endpoint that the frontend gallery script calls (see: ./public/js/app.js).
-app.get('/api/animals', function(request, response) {
+// Display the login page
+app.get('/login', function(request, response) {
+    response.render('login', {});
+})
 
-    // response.json(animals);
-
-    Animal.find(function(error, animals) {
-        response.json(animals);
-    });
-
+// Display the login page
+app.get('/gallery-section', function(request, response) {
+    response.render('gallery-section', {});
 })
 
 // if no file or endpoint found, send a 404 error as a response to the browser
