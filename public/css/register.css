@@ -1,0 +1,209 @@
+/* Author: Ying Jin 
+Date: 12-july-2020
+Course Module: 
+              course name: Web Application Development (CPRG-210-XM1);
+              content: HTML, CSS, JavaScript;
+Assignment 2: Website enhancements:
+              Using the code you wrote for Assignment 1, enhance travel website.
+              update existing code to fix bugs and modify the design as needed. */
+
+
+/* Google Fonts */
+
+@import url("https://fonts.googleapis.com/css2?family=Yellowtail&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=PT+Serif&display=swap");
+html {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: "PT Serif", serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100%;
+    min-width: 100%;
+}
+
+
+/* header section */
+
+nav {
+    display: flex;
+    width: 100%;
+    background-color: lightseagreen;
+    justify-content: space-between;
+}
+
+nav ul {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    display: flex;
+    justify-content: flex-end;
+    background-color: lightseagreen;
+}
+
+nav li a {
+    padding: 1.3em;
+    display: block;
+    color: white;
+    text-decoration: none;
+}
+
+nav a:hover {
+    background-image: linear-gradient(green, pink);
+}
+
+nav a:active {
+    background-image: linear-gradient(rebeccapurple, lightgrey);
+}
+
+.ham-menu {
+    display: none;
+}
+
+.visible {
+    position: absolute;
+    top: 60px;
+    right: 0px;
+    display: flex !important;
+    flex-direction: column;
+}
+
+h1,
+h2 {
+    margin: 0;
+    font-family: 'Yellowtail', cursive;
+    font-weight: 400;
+}
+
+.company-title-btn {
+    color: white;
+    text-decoration: none;
+}
+
+.company-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+}
+
+.icon {
+    width: 30%;
+    height: 40%;
+}
+
+.current {
+    background-image: linear-gradient(rebeccapurple, lightgrey);
+}
+
+@media (orientation: portrait) {
+    nav ul {
+        display: none;
+    }
+    .ham-menu {
+        display: flex;
+    }
+    .ham-btn {
+        height: 60px;
+    }
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f1f1f1;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+    }
+}
+
+
+/* register form section */
+
+.form-container {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    width: 40%;
+    justify-content: center;
+}
+
+.container {
+    padding: 16px;
+    background-color: Powderblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 25px;
+}
+
+.sign-up-box {
+    width: 70%;
+}
+
+.sign-up {
+    text-align: center;
+    font-size: 25px;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: none;
+    background: white;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+    background-color: #ddd;
+    outline: none;
+}
+
+.registerbtn {
+    background-color: #4caf50;
+    color: white;
+    padding: 16px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+}
+
+.registerbtn:hover {
+    opacity: 1;
+}
+
+a {
+    color: dodgerblue;
+}
+
+.signin {
+    background-color: #f1f1f1;
+    text-align: center;
+    padding: 2px 50px;
+    border-radius: 25px;
+}
+
+.required {
+    color: red;
+}
+
+
+/* Footer Section */
+
+footer {
+    margin: 0;
+    padding: 1em;
+    text-align: center;
+    background-color: grey;
+    color: white;
+}
