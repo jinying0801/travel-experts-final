@@ -11,7 +11,8 @@ const gallerySchema = new mongoose.Schema({
     source: String,
     fileName: String,
     description: String,
-    link: String
+    link: String,
+    detail: String
 });
 
 // Compile and export our model using the above Schema.

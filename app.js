@@ -3,9 +3,11 @@ const path = require('path');
 const express = require('express');
 const mongoose = require('mongoose');
 const dotenv = require('dotenv').config();
+const moment = require('moment');
+
 
 // Models
-const Animal = require('./models/gallery.js');
+const Destination = require('./models/gallery.js');
 
 // Import seed data
 const dbSeed = require('./seeds/destinations.js');
@@ -35,7 +37,7 @@ app.set('view engine', 'ejs');
 // if yes, return that file as a response to the browser
 app.use(express.static(path.join(__dirname, 'public')));
 
-// Define an endpoint handler for the home page 
+
 
 // Display the login page
 app.get('/', function(request, response) {
@@ -52,9 +54,32 @@ app.get('/login', function(request, response) {
     response.render('login', {});
 })
 
-// Display the login page
-app.get('/gallery-section', function(request, response) {
-    response.render('gallery-section', {});
+// Create a JSON (no EJS here) that returns the entire animal JSON
+// This is the endpoint that the frontend gallery script calls (see: ./public/js/app.js).
+app.get('/api/destinations', function(request, response) {
+    Destination.find(function(error, destinations) {
+        response.json(destinations);
+    });
+
+})
+
+
+
+// Define an endpoint handler for the individual animal pages
+app.get('/:id', function(request, response) {
+
+    // model.findOne returns the first object it finds
+    // model.find will always return an array, even if it only finds one 
+    Destination.findOne({ 'id': request.params.id }, function(error, destination) {
+
+        // Check for IDs that are not in our list
+        if (!destination) {
+            return response.send('Invalid ID.');
+        }
+
+        // Compile view and respond
+        response.render('gallery-single', destination);
+    });
 })
 
 // if no file or endpoint found, send a 404 error as a response to the browser

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello
+        <%= title %>!</title>
+    <link rel="stylesheet" href="css/gallery-single.css">
+</head>
+
+<body>
+    <%- include('./partials/index-header.ejs'); %>
+
+        <figure>
+            <img src="http://picsum.photos/id/<%= id %>/600" alt="<%= title %>">
+            <figcaption>
+                <h1>
+                    <%= title %>!</h1>
+                <p>
+                    <%= detail %>!</p>
+            </figcaption>
+        </figure>
+        <%- include('./partials/footer.ejs'); %>
+
+</body>
+
+</html>
