@@ -63,8 +63,6 @@ app.get('/api/destinations', function(request, response) {
 
 })
 
-
-
 // Define an endpoint handler for the individual animal pages
 app.get('/:id', function(request, response) {
 
