@@ -7,15 +7,6 @@
 //               Using the code you wrote for Assignment 1, enhance travel website.
 //               update existing code to fix bugs and modify the design as needed.
 
-//  Hamburger Menu.
-const button = document.querySelector('.ham-menu');
-const menu = document.querySelector('.dropdown-content');
-var handlemenu = function() {
-    menu.classList.toggle('visible');
-}
-console.log(button);
-button.addEventListener('click', handlemenu);
-
 //  validate the entered repeat password .
 var password = document.getElementById("initial-password"),
     confirmPassword = document.getElementById("psw-repeat");

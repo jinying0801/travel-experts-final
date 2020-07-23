@@ -54,6 +54,12 @@ app.get('/login', function(request, response) {
     response.render('login', {});
 })
 
+// Create a JSON (no EJS here) that returns the current year JSON
+// API of "getYear" is used to automatically send a current year to footer section.
+app.get('/api/getYear', function(request, response) {
+    response.json({ year: moment().format("YYYY") });
+})
+
 // Create a JSON (no EJS here) that returns the entire animal JSON
 // This is the endpoint that the frontend gallery script calls (see: ./public/js/app.js).
 app.get('/api/destinations', function(request, response) {

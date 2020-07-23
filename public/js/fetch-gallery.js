@@ -15,7 +15,7 @@ fetch('https://travel-experts-ying.herokuapp.com/api/destinations')
     imgList.forEach(function(item) {
         imgTemplate +=
             `<figure>
-        <a href="${item.link}">
+        <a href="${item.id}">
           <img src="https://picsum.photos/id/${item.id}/250" alt="${item.description}">
         </a>
         <figcaption>${item.title}!</figcaption>
