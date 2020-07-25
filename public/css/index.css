@@ -1,13 +1,3 @@
-/* Author: Ying Jin 
-Date: 12-july-2020
-Course Module: 
-              course name: Web Application Development (CPRG-210-XM1);
-              content: HTML, CSS, JavaScript;
-Assignment 2: Website enhancements:
-              Using the code you wrote for Assignment 1, enhance travel website.
-              update existing code to fix bugs and modify the design as needed. */
-
-
 /* Google Fonts */
 
 @import url('https://fonts.googleapis.com/css2?family=Yellowtail&display=swap');
@@ -19,7 +9,7 @@ body {
     flex-direction: column;
     justify-content: space-between;
     min-height: 100%;
-    background-color: rgba(34, 100, 255, 0.05);
+    background-color: rgb(255, 250, 250);
 }
 
 

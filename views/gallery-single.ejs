@@ -1,3 +1,4 @@
+<!--custom 404 page when a file (or endpoint) cannot be found.-->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,10 +12,8 @@
 
 <body>
     <%- include('./partials/index-header.ejs'); %>
-
-
         <figure>
-            <img src="http://picsum.photos/id/<%= id %>/600" alt="<%= title %>">
+            <img src="http://picsum.photos/id/<%= id %>/600/400" alt="<%= title %>">
             <figcaption>
                 <h1>
                     <%= title %>!</h1>
@@ -24,7 +23,6 @@
         </figure>
         <%- include('./partials/footer.ejs'); %>
             <%- include('./partials/js-gallery-single.ejs'); %>
-
 </body>
 
 </html>

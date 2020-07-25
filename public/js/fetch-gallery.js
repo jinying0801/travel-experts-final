@@ -1,3 +1,4 @@
+// create gallery section with 6 images.
 //fetch('http://localhost:3000/api/destinations')
 fetch('https://travel-experts-ying.herokuapp.com/api/destinations')
     .then(function(response) {

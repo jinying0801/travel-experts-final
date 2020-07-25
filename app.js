@@ -5,7 +5,6 @@ const mongoose = require('mongoose');
 const dotenv = require('dotenv').config();
 const moment = require('moment');
 
-
 // Models
 const Destination = require('./models/gallery.js');
 
@@ -37,14 +36,12 @@ app.set('view engine', 'ejs');
 // if yes, return that file as a response to the browser
 app.use(express.static(path.join(__dirname, 'public')));
 
-
-
-// Display the login page
+// Display the index page
 app.get('/', function(request, response) {
     response.render('index', {});
 })
 
-// Display the login page
+// Display the register page
 app.get('/register', function(request, response) {
     response.render('register', {});
 })
@@ -60,36 +57,30 @@ app.get('/api/getYear', function(request, response) {
     response.json({ year: moment().format("YYYY") });
 })
 
-// Create a JSON (no EJS here) that returns the entire animal JSON
-// This is the endpoint that the frontend gallery script calls (see: ./public/js/app.js).
+// Create a JSON (no EJS here) that returns the entire destination JSON
+// This is the endpoint that the frontend fetch-gallery script calls (see: ./public/js/fetch-gallery.js).
 app.get('/api/destinations', function(request, response) {
     Destination.find(function(error, destinations) {
         response.json(destinations);
     });
-
 })
 
-// Define an endpoint handler for the individual animal pages
+// Define an endpoint handler for the individual destination pages
 app.get('/:id', function(request, response) {
-
-    // model.findOne returns the first object it finds
-    // model.find will always return an array, even if it only finds one 
     Destination.findOne({ 'id': request.params.id }, function(error, destination) {
-
         // Check for IDs that are not in our list
         if (!destination) {
             return response.send('Invalid ID.');
         }
-
         // Compile view and respond
         response.render('gallery-single', destination);
     });
 })
 
-// if no file or endpoint found, send a 404 error as a response to the browser
+// if no file or endpoint found, direct to a 404 error page as a response to the browser
 app.use(function(req, res, next) {
     res.status(404);
-    res.send('404: File Not Found');
+    res.render('404-error', {});
 });
 
 // start up server

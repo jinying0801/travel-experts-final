@@ -1,4 +1,4 @@
-// Our animal data structure: An array of objects.
+// Our gallery destination data structure: An array of objects.
 const destinations = [{
         id: 1011,
         title: 'Pbanff&lakelouise',

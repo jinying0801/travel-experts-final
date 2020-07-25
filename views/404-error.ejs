@@ -1,0 +1,19 @@
+<!--custom 404 page when a file (or endpoint) cannot be found.-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 Error Page</title>
+    <%- include('./partials/css-404-error.ejs'); %>
+</head>
+
+<body>
+    <%- include('./partials/index-header.ejs'); %>
+        <h1>Page not found!</h1>
+        <%- include('./partials/footer.ejs'); %>
+            <%- include('./partials/js-404-error.ejs'); %>
+</body>
+
+</html>

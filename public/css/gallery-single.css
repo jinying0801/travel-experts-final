@@ -2,6 +2,10 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Yellowtail&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=PT+Serif&display=swap');
+html {
+    height: 100%;
+}
+
 body {
     margin: 0;
     font-family: "PT Serif", serif;
@@ -9,7 +13,7 @@ body {
     flex-direction: column;
     justify-content: space-between;
     min-height: 100%;
-    background-color: rgba(34, 100, 255, 0.05);
+    background-color: oldlace;
 }
 
 
@@ -103,14 +107,33 @@ h2 {
 }
 
 
+/* gallery single image */
+
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+
+/* image description */
+
+figcaption {
+    font-size: 16px;
+    font-weight: 400;
+    text-align: center;
+    margin-left: 20vw;
+    margin-right: 20vw;
+}
+
+
 /* Footer Section */
 
 footer {
-    display: block;
     margin: 0;
     padding: 1em;
     text-align: center;
     background-color: grey;
     color: white;
-    white-space: nowrap
 }
