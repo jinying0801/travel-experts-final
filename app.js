@@ -68,7 +68,6 @@ app.get('/:id', function(request, response) {
         // Check for IDs that are not in our list
         if (!destination) {
             return response.render('404-error', {});
-            c
         }
         // Compile view and respond
         response.render('gallery-single', destination);
