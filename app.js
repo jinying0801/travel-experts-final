@@ -51,12 +51,7 @@ app.get('/login', function(request, response) {
     response.render('login', {});
 })
 
-// Create a JSON (no EJS here) that returns the current year JSON
-// API of "getYear" is used to automatically send a current year to footer section.
-//app.get('/api/getYear', function(request, response) {
-//response.json({ year: moment().format("YYYY") });
-//})
-
+// Make moment available as a variable in every EJS page
 app.locals.moment = moment;
 
 // Create a JSON (no EJS here) that returns the entire destination JSON
