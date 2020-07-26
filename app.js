@@ -53,9 +53,11 @@ app.get('/login', function(request, response) {
 
 // Create a JSON (no EJS here) that returns the current year JSON
 // API of "getYear" is used to automatically send a current year to footer section.
-app.get('/api/getYear', function(request, response) {
-    response.json({ year: moment().format("YYYY") });
-})
+//app.get('/api/getYear', function(request, response) {
+//response.json({ year: moment().format("YYYY") });
+//})
+
+app.locals.moment = moment;
 
 // Create a JSON (no EJS here) that returns the entire destination JSON
 // This is the endpoint that the frontend fetch-gallery script calls (see: ./public/js/fetch-gallery.js).
@@ -71,6 +73,7 @@ app.get('/:id', function(request, response) {
         // Check for IDs that are not in our list
         if (!destination) {
             return response.render('404-error', {});
+            c
         }
         // Compile view and respond
         response.render('gallery-single', destination);
